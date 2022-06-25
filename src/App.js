@@ -4,7 +4,8 @@ import './App.css';
 
 export const ACTIONS = {
   ADD_TODO: "add-todo",
-  TOGGLE_TODO: "toggle-todo"
+  TOGGLE_TODO: "toggle-todo",
+  DELETE_TODO: "delete-todo"
 }
 
 function reducer(to_dos, action) {
@@ -12,6 +13,7 @@ function reducer(to_dos, action) {
   switch (action.type){
     case ACTIONS.ADD_TODO:
       return [...to_dos, newTodo(action.payload.name)];
+
     case ACTIONS.TOGGLE_TODO:
       return to_dos.map(to_do => {
         if(to_do.id === action.payload.id){
@@ -20,9 +22,16 @@ function reducer(to_dos, action) {
           return to_do;
         }
       })
+
+    case ACTIONS.DELETE_TODO:
+      return to_dos.filter(to_do => to_do.id !== action.payload.id);
+      
     default:
       return to_dos;
+
+    
   }
+  
 }
 
 let newTodo = (name) => {
