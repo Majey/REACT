@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.nav {
+  background-color: grey;
+  color: white;
+  padding: 10px;
+}
+
+/*
+
 input {
   width: 30%;
   padding: 5px 10px;
@@ -11,3 +23,5 @@ button {
   padding: 5px 10px;
   margin: 10px 5px;
 }
+
+*/
